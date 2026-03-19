@@ -1,283 +1,199 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swastik - Portfolio Webite</title>
+    <title>Swastik - Minimalist Portfolio</title>
     <link rel="stylesheet" href="src/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Tilt+Prism&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./images/swastik logo.jpg">
-
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
 
-
-<body class="bg-slate-900 font-suse">
-    <!-- Navbar -->
-    <nav class=" fixed top-5 left-8 right-8 m-auto rounded-full h-20 bg-slate-950/50 backdrop-blur-sm px-5 shadow-slate-800 shadow-2xl flex justify-between items-center">
-        <div>
-            <a href="#"><img src="images/swastik logo.jpg" alt="" class="rounded-full h-[45px] md:h-[60px]"></a>
-        </div>
-
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex justify-center text-white rounded-full px-5 py-3">
-            <li class="mx-5 md:mx-10"><a href="#" class="hover:text-orange-200 transition-all text-lg">Home</a></li>
-            <li class="mx-5 md:mx-10"><a href="#skills" class="hover:text-orange-200 transition-all text-lg">Skills</a>
-            </li>
-            <li class="mx-5 md:mx-10"><a href="#projects"
-                    class="hover:text-orange-200 transition-all text-lg">Projects</a></li>
-            <li class="mx-5 md:mx-10"><a href="#contact"
-                    class="hover:text-orange-200 transition-all text-lg">Contact</a></li>
-        </ul>
-
-        <!-- Mobile Menu Button -->
-        <button
-            class="md:hidden bg-orange-500 hover:bg-orange-400 transition-all text-white text-3xl rounded-full py-2 px-5"
-            onclick="toggleMenu()">
-            &equiv;
-        </button>
-
-        <a href="#skills"
-            class="hidden md:block bg-orange-500 hover:bg-orange-400 transition-all text-white text-lg rounded-full px-5 py-3">Know
-            More</a>
-    </nav>
-
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobileMenu"
-        class=" rounded-3xl hidden left-8 right-8 mt-5 md:hidden transition-all text-white text-center py-5 bg-slate-950/50 backdrop-blur-sm">
-        <div class="flex flex-col">
-            <ul>
-                <li class="py-2"><a href="#" class="hover:text-orange-400 transition-all text-lg">Home</a></li>
-                <li class="py-2"><a href="#skills" class="hover:text-orange-400 transition-all text-lg">Skills</a></li>
-                <li class="py-2"><a href="#projects" class="hover:text-orange-400 transition-all text-lg">Projects</a>
-                </li>
-                <li class="py-2"><a href="#contact" class="hover:text-orange-400 transition-all text-lg">Contact</a>
-                </li>
+<body class="bg-[#0a0a0a] text-gray-200 antialiased overflow-x-hidden selection:bg-white selection:text-black">
+    <nav class="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-md z-50 border-b border-white/5">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter text-white">SWASTIK.</a>
+            
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                <li><a href="#education" class="hover:text-white transition-colors">Education</a></li>
+                <li><a href="#skills" class="hover:text-white transition-colors">Skills</a></li>
+                <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+                <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
             </ul>
-            <a href="#skills"
-                class="bg-orange-500 hover:bg-orange-400 transition-all w-60 mx-auto text-white text-lg rounded-full px-5 py-3 mt-5">Know
-                More</a>
+
+            <button class="md:hidden text-gray-400 hover:text-white" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </div>
+    </nav>
+    
+    <div id="mobileMenu" class="hidden fixed top-20 w-full bg-[#0a0a0a] border-b border-white/5 z-40 md:hidden">
+        <ul class="flex flex-col p-6 gap-6 text-sm font-medium text-gray-400 text-center">
+            <li><a href="#about" class="hover:text-white transition-colors" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">About</a></li>
+            <li><a href="#education" class="hover:text-white transition-colors" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">Education</a></li>
+            <li><a href="#skills" class="hover:text-white transition-colors" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">Skills</a></li>
+            <li><a href="#projects" class="hover:text-white transition-colors" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">Projects</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">Contact</a></li>
+        </ul>
     </div>
 
-    <!-- Full-Height Header Section -->
-    <header
-        class="flex flex-col-reverse md:flex-row justify-between items-center p-5 md:px-14 md:py-28 mt-24 md:mt-16 ">
-        <div class="flex flex-col justify-center h-full text-center md:text-left">
-            <h1 class="text-orange-500 font-bold text-4xl md:text-7xl my-5 font-handjet tracking-widest">HEY, I'M
-                SWASTIK</h1>
-            <h2 class="text-orange-200 text-xl md:text-2xl my-5 font-semibold">NSUT | CSE | First Year</h2>
-            <p class="text-white text-base md:text-lg mt-5 md:mt-20">
-                I started coding in class 9th with scratch, and over the years, I've picked up <br
-                    class="hidden md:block"> languages
-                like Python, C++ and HTML/CSS. Right now, I'm <br class="hidden md:block">
-                learning web development and diving deeper <br class="hidden md:block"> into data structures and
-                algorithms.
+    <main class="max-w-4xl mx-auto px-6 pt-32 pb-20 space-y-32">
+        <section id="about" class="pt-20">
+            <p class="text-sm font-medium text-gray-500 mb-4 tracking-widest uppercase">Hello, I am</p>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">Swastik</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+                Computer Science and Engineering student passionate about crafting clean code and modern full-stack web applications.
             </p>
-            <a href="#skills"
-                class="bg-orange-500 hover:bg-orange-400 transition-all text-white rounded-full px-5 py-3 w-32 my-5 md:my-10 text-lg mx-auto md:mx-0">Know
-                More</a>
-        </div>
-        <div class="mb-10 md:mb-0 shadow-white/15 shadow-2xl">
-            <img src="images/swastik.jpeg" alt="" class="rounded-3xl w-full h-[300px] md:h-[450px] object-cover">
-        </div>
-    </header>
-
-    <!-- Skills Section -->
-    <section id="skills" class="p-5 md:p-14 flex flex-col justify-center items-center bg-slate-800">
-        <h1 class="text-center text-white text-4xl md:text-5xl font-bold mt-5">SKILLS</h1>
-        <div class="w-20 h-1 bg-orange-500 my-5"></div>
-
-        <!-- <div class="flex flex-wrap justify-center md:justify-around my-10 w-full"> -->
-        <div class=" grid grid-cols-2 md:grid-cols-3 gap-5 ">
-            <div
-                class="m-4 hover:bg-orange-500/30 hover:shadow-black hover:shadow-2xl hover:-translate-y-2 transition-all p-4 rounded-lg">
-                <img src="images/logos/html.png" alt="HTML" class="h-16 w-auto md:h-36">
-                <p class="text-white text-xl text-center mt-5 font-bold">HTML</p>
+            <div class="mt-10 flex gap-4">
+                <a href="#contact" class="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">Get in touch</a>
+                <a href="#projects" class="border border-white/20 px-6 py-3 rounded-full text-sm font-medium hover:bg-white/5 transition-colors">View work</a>
             </div>
-            <div
-                class="m-4 hover:bg-orange-500/30 hover:shadow-black hover:shadow-2xl hover:-translate-y-2 transition-all p-4 rounded-lg">
-                <img src="images/logos/css.png" alt="CSS" class="h-16 w-auto md:h-36">
-                <p class="text-white text-xl text-center mt-5 font-bold">CSS</p>
+        </section>
 
-            </div>
-            <div
-                class="m-4 hover:bg-orange-500/30 hover:shadow-black hover:shadow-2xl hover:-translate-y-2 transition-all p-4 rounded-lg">
-                <img src="images/logos/python.png" alt="Python" class="h-16 w-auto md:h-36">
-                <p class="text-white text-xl text-center mt-5 font-bold">Python</p>
-
-            </div>
-            <div
-                class="m-4 hover:bg-orange-500/30 hover:shadow-black hover:shadow-2xl hover:-translate-y-2 transition-all p-4 rounded-lg">
-                <img src="images/logos/django.png" alt="Django" class="h-16 w-auto md:h-36">
-                <p class="text-white text-xl text-center mt-5 font-bold">Django</p>
-
-            </div>
-            <div
-                class="m-4 hover:bg-orange-500/30 hover:shadow-black hover:shadow-2xl hover:-translate-y-2 transition-all p-4 rounded-lg">
-                <img src="images/logos/cpp.png" alt="C++" class="h-16 w-auto md:h-36">
-                <p class="text-white text-xl text-center mt-5 font-bold">C++</p>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="bg-slate-900 py-20 px-5">
-        <h2 class="text-white text-4xl md:text-5xl font-bold text-center mb-0">PROJECTS</h2>
-        <div class="w-20 h-1 bg-orange-500 mt-5 mb-14 mx-auto"></div>
-
-
-        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- Project 1 -->
-            <div
-                class="bg-slate-800 rounded-lg shadow-white overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-3">
-                <img src="images/projects/lib.png" alt="Project 1" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-white mb-2">Library Website</h3>
-                    <p class="text-white mb-4">An online library website for a college's hindi literature society.</p>
-                    <a href="https://pustakaalayabhivyanjana.github.io/" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">Visit</a>
-                    <a href="https://github.com/pustakaalayabhivyanjana/pustakaalayabhivyanjana.github.io/"
-                        target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">Github</a>
+        <section id="education">
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-8 border-b border-white/10 pb-4">Education</h2>
+            <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-white">Netaji Subhash University of Technology</h3>
+                    <p class="text-gray-400 mt-1">B. Tech. in Computer Science and Engineering</p>
+                    <p class="text-sm text-gray-500 mt-2">CGPA: 7.94 | New Delhi, India</p>
+                </div>
+                <div class="text-sm border border-white/10 px-3 py-1 rounded-full text-gray-400">
+                    Expected 2028
                 </div>
             </div>
+        </section>
 
-            <!-- Project 2 -->
-            <div
-                class="bg-slate-800 rounded-lg shadow-white overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-3">
-                <img src="images/projects/ulearn.jpeg" alt="Project 3" class="w-full h-48 object-center ">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-white mb-2">U-Learn</h3>
-                    <p class="text-white mb-4">An educational platform designed to make learning easy and accessible.
-                        (note: this website it not responsive)</p>
-                    <a href="https://swastik220705.github.io/U-Learn/" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">Visit</a>
-                    <a href="https://github.com/swastik220705/U-Learn/" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">Github</a>
+        <section id="skills">
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-8 border-b border-white/10 pb-4">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">Languages</h3>
+                    <p class="text-gray-300">C++, Python, JavaScript, TypeScript</p>
+                </div>
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">Frontend</h3>
+                    <p class="text-gray-300">React, HTML, CSS</p>
+                </div>
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">Backend</h3>
+                    <p class="text-gray-300">Node.js, Express, FastAPI</p>
+                </div>
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">Databases</h3>
+                    <p class="text-gray-300">MongoDB, PostgreSQL</p>
+                </div>
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">Tools & Platforms</h3>
+                    <p class="text-gray-300">Git, GitHub, Docker, VS Code, Linux, Figma</p>
+                </div>
+                <div>
+                    <h3 class="text-sm uppercase tracking-widest text-gray-500 mb-4">Other</h3>
+                    <p class="text-gray-300">REST APIs, Socket.IO, JWT Authentication</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Project 3 -->
-            <div
-                class="bg-slate-800 rounded-lg shadow-white overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-3">
-                <img src="images/projects/quiz.png" alt="Project 3" class="w-full h-48 object-center ">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-white mb-2">QQUUIIZZ</h3>
-                    <p class="text-white mb-4">A simple and fun science quiz game with 20 questions to test your
-                        knowledge. Made in scratch and converted to html.</p>
-                    <a href="https://swastik220705.github.io/QQUUIIZZ//" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">Visit</a>
-                    <a href="https://github.com/swastik220705/QQUUIIZZ/" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">Github</a>
+        <section id="projects">
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-8 border-b border-white/10 pb-4">Selected Projects</h2>
+            <div class="space-y-16">
+                <!-- FloatChat AI -->
+                <div class="group">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-4">
+                        <h3 class="text-xl font-semibold text-white">FloatChat AI</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">React</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Node.js</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Express</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">FastAPI</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">PostgreSQL</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Docker</span>
+                        </div>
+                    </div>
+                    <ul class="text-gray-400 space-y-2 list-disc list-inside mb-4 text-sm leading-relaxed">
+                        <li>Built an AI-powered conversational interface to query and visualize ARGO oceanographic data interactively.</li>
+                        <li>Integrated a React frontend with Node.js and FastAPI backends using REST APIs for data handling and AI logic.</li>
+                        <li>Containerized the application using Docker for consistent development and deployment.</li>
+                    </ul>
+                    <div class="flex gap-4 text-sm">
+                        <a href="https://github.com/swastikiscoding" target="_blank" class="text-white hover:underline underline-offset-4">GitHub</a>
+                        <a href="#" class="text-white hover:underline underline-offset-4">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- VibeX -->
+                <div class="group">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-4">
+                        <h3 class="text-xl font-semibold text-white">VibeX</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">React</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Node.js</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Express</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">MongoDB</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Socket.IO</span>
+                        </div>
+                    </div>
+                    <ul class="text-gray-400 space-y-2 list-disc list-inside mb-4 text-sm leading-relaxed">
+                        <li>Developed a full-stack social platform for discovering events, forming teams, and real-time interaction.</li>
+                        <li>Implemented real-time messaging and live rooms using Socket.IO for low-latency communication.</li>
+                        <li>Designed REST APIs with Express and MongoDB, including separate user and profile schemas.</li>
+                    </ul>
+                    <div class="flex gap-4 text-sm">
+                        <a href="https://github.com/swastikiscoding" target="_blank" class="text-white hover:underline underline-offset-4">GitHub</a>
+                        <a href="#" class="text-white hover:underline underline-offset-4">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- TaskFlow -->
+                <div class="group">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-4">
+                        <h3 class="text-xl font-semibold text-white">TaskFlow</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">React</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Node.js</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">Express</span>
+                            <span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded">MongoDB</span>
+                        </div>
+                    </div>
+                    <ul class="text-gray-400 space-y-2 list-disc list-inside mb-4 text-sm leading-relaxed">
+                        <li>Built a task management web application to organize tasks, track progress, and manage priorities.</li>
+                        <li>Implemented CRUD-based REST APIs with validation and error handling.</li>
+                        <li>Developed a responsive React frontend using reusable components and clean state management.</li>
+                    </ul>
+                    <div class="flex gap-4 text-sm">
+                        <a href="https://github.com/swastikiscoding" target="_blank" class="text-white hover:underline underline-offset-4">GitHub</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Project 4 -->
-            <div
-                class="bg-slate-800 rounded-lg shadow-white overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-3">
-                <img src="images/projects/spaceship.png" alt="Project 2" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-white mb-2">Spaceship Shooter Game</h3>
-                    <p class="text-white mb-4">A simple spaceship shooter game made in python using Pygame library.</p>
-                    <a href="https://github.com/Swastik220705/Spaceship-shooter-game-in-python" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">GitHub</a>
-                </div>
+        <!-- Contact -->
+        <section id="contact" class="pb-20">
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-8 border-b border-white/10 pb-4">Contact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="mailto:swastikiscoding@gmail.com" class="flex flex-col p-6 border border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+                    <span class="text-sm text-gray-500 mb-2">Email</span>
+                    <span class="text-lg text-white font-medium">swastikiscoding@gmail.com</span>
+                </a>
+                <a href="tel:+919718807800" class="flex flex-col p-6 border border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+                    <span class="text-sm text-gray-500 mb-2">Phone</span>
+                    <span class="text-lg text-white font-medium">+91 9718807800</span>
+                </a>
+                <a href="https://linkedin.com/in/swastik220705" target="_blank" class="flex flex-col p-6 border border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+                    <span class="text-sm text-gray-500 mb-2">LinkedIn</span>
+                    <span class="text-lg text-white font-medium">linkedin.com/in/swastik220705</span>
+                </a>
+                <a href="https://github.com/swastikiscoding" target="_blank" class="flex flex-col p-6 border border-white/10 rounded-xl hover:bg-white/5 transition-colors">
+                    <span class="text-sm text-gray-500 mb-2">GitHub</span>
+                    <span class="text-lg text-white font-medium">github.com/swastikiscoding</span>
+                </a>
             </div>
-            <!-- Project 5 -->
-            <div
-                class="bg-slate-800 rounded-lg shadow-white overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-3">
-                <img src="images/projects/calculator.webp" alt="Project 2" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-white mb-2">Simple GUI Calculator</h3>
-                    <p class="text-white mb-4">A basic GUI calculator built in Python using Tkinter.</p>
-                    <a href="https://github.com/Swastik220705/Simple-GUI-Calculator-in-Python" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">GitHub</a>
-                </div>
-            </div>
-
-
-            <!-- Project 6 -->
-            <div
-                class="bg-slate-800 rounded-lg shadow-white overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-3">
-                <img src="images/projects/folder.png" alt="Project 4" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-white mb-2">Folder organizer</h3>
-                    <p class="text-white mb-4">A simple folder organizer made using python and OS module.</p>
-                    <a href="https://github.com/Swastik220705/Folder-Organizer-Using-Python/" target="_blank"
-                        class=" bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-400 transition duration-300">Github</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section id="contact" class="flex flex-col items-center justify-center bg-slate-800 py-20 px-5">
-        <h2 class="text-white text-4xl md:text-5xl font-bold text-center mb-0">CONTACT</h2>
-        <div class="w-20 h-1 bg-orange-500 mt-5 mb-14 mx-auto"></div>
-
-        <form action="mailto:theswastik111@gmail.com" method="post" enctype="text/plain"
-            class="flex flex-col items-center gap-8 w-full max-w-xl bg-slate-900 p-8 rounded-lg shadow-lg">
-            <div class="w-full">
-                <label for="name" class="block text-lg text-white mb-2">Name:</label>
-                <input type="text" id="name" placeholder="Enter your name"
-                    class="w-full p-3 bg-slate-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all">
-            </div>
-            <div class="w-full">
-                <label for="mail" class="block text-lg text-white mb-2">Email:</label>
-                <input type="email" id="mail" placeholder="Enter your email"
-                    class="w-full p-3 bg-slate-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all">
-            </div>
-            <div class="w-full">
-                <label for="msg" class="block text-lg text-white mb-2">Message:</label>
-                <textarea name="msg" id="msg" rows="5" placeholder="Write your message"
-                    class="w-full p-3 bg-slate-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"></textarea>
-            </div>
-            <button type="submit"
-                class="bg-orange-500 hover:bg-orange-400 transition-all text-white text-lg rounded-full px-8 py-3">Send</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 p-5 md:px-14 text-white text-center">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="text-md mb-5 md:mb-0">© 2024 Swastik. All rights reserved.</p>
-            <div class="flex space-x-5">
-                <a href="https://instagram.com/swastik_i_am" target="_blank" class="text-lg hover:text-orange-400"><img
-                        src="images/footer/instagram.png" alt="instagram" class="h-8"></a>
-                <a href="https://github.com/swastik220705" target="_blank" class="text-lg hover:text-orange-400"><img
-                        src="images/footer/github.png" alt="github" class="h-8"></a>
-                <a href="https://www.linkedin.com/in/swastik-281b0b298/" target="_blank"
-                    class="text-lg hover:text-orange-400"><img src="images/footer/linkedin.png" alt="linkedin"
-                        class="h-8"></a>
-            </div>
-        </div>
-    </footer>
-
-
-
-
-    <!-- JS to implement hamburger menu -->
-    <script>
-        // JavaScript to toggle the mobile menu
-        const menu = document.querySelector('#mobileMenu');
-        function toggleMenu() {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('fixed');
-            // menu.classList.toggle('flex');
-        }
-    </script>
-
+        </section>
+    </main>
 </body>
-
 </html>
